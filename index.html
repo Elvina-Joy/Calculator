@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "calc">
+        <div class = "inp">
+            <input id = "input" type = "text">
+        </div>
+        <div class = "but">
+            <button type = "button" onclick = "buttonclick('ac')">AC</button>
+            <button type = "button" onclick = "buttonclick('=')">=</button>
+            <button type = "button" onclick = "buttonclick(0)">0</button>
+            <button type = "button" onclick = "buttonclick('-')">-</button>
+        </div>
+        <div class = "but">
+            <button type = "button" onclick = "buttonclick(1)">1</button>
+            <button type = "button" onclick = "buttonclick(2)">2</button>
+            <button type = "button" onclick = "buttonclick(3)">3</button>
+            <button type = "button" onclick = "buttonclick('+')">+</button>
+        </div>
+        <div class = "but">
+            <button type = "button" onclick = "buttonclick(4)">4</button>
+            <button type = "button" onclick = "buttonclick(5)">5</button>
+            <button type = "button" onclick = "buttonclick(6)">6</button>
+            <button type = "button" onclick = "buttonclick('*')">*</button>
+        </div>
+        <div class = "but">
+            <button type = "button" onclick = "buttonclick(7)">7</button>
+            <button type = "button" onclick = "buttonclick(8)">8</button>
+            <button type = "button" onclick = "buttonclick(9)">9</button>
+            <button type = "button" onclick = "buttonclick('/')">/</button>
+        </div>
+    </div>
+    <script>
+        let currentinp = ""
+        function buttonclick(x)
+        {
+            if(x == 'ac')
+                currentinp = ""
+            else if(x == '=')
+                result(currentinp)
+            else
+            {
+                currentinp +=x
+            }
+            document.getElementById("input").value = currentinp
+        }
+        function result()
+        {
+            let result = eval(currentinp);
+            currentinp = result.toString();
+            document.getElementById("input").value = currentinp;
+        }
+    </script>
+</body>
+</html>
